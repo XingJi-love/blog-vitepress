@@ -9,14 +9,14 @@
 JDBC（Java DataBase Connectivity）就是Java数据库连接，说白了就是用Java语言来操作数据库。原来我们操作数据库是在控制台使用SQL语句来操作数据库，JDBC是用Java语言向数据库发送SQL语句。
 ![图片1.png](https://cdn.nlark.com/yuque/0/2023/png/21376908/1701931262247-009be90f-6a0e-4e63-a1f1-6d6c96df65ce.png#averageHue=%23efe7f7&clientId=ucd4dfa1f-8793-4&from=paste&height=374&id=u7ed5bac8&originHeight=374&originWidth=657&originalType=binary&ratio=1&rotation=0&showTitle=false&size=136883&status=done&style=shadow&taskId=u2ff2f08f-57be-4241-9660-c991fa1d540&title=&width=657)
 
-![](https://cdn.nlark.com/yuque/0/2023/jpeg/21376908/1692002570088-3338946f-42b3-4174-8910-7e749c31e950.jpeg#averageHue=%23f9f8f8&from=url&id=acVGP&originHeight=78&originWidth=1400&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=shadow&title=)
+
 # JDBC原理
 早期SUN公司的天才们想编写一套可以连接天下所有数据库的API，但是当他们刚刚开始时就发现这是不可完成的任务，因为各个厂商的数据库服务器差异太大了。后来SUN开始与数据库厂商们讨论，最终得出的结论是，由SUN提供一套访问数据库的规范（就是一组接口），并提供连接数据库的协议标准，然后各个数据库厂商会遵循SUN的规范提供一套访问自己公司数据库服务器的API。SUN提供的规范命名为JDBC，而各个厂商提供的，遵循了JDBC规范的，可以访问自己数据库的API被称之为驱动！
 ![图片2.png](https://cdn.nlark.com/yuque/0/2023/png/21376908/1701931393355-983a997d-c44c-4a48-b1b0-91b281b5a98b.png#averageHue=%23e9e9e8&clientId=ucd4dfa1f-8793-4&from=paste&height=308&id=u158f2a18&originHeight=308&originWidth=610&originalType=binary&ratio=1&rotation=0&showTitle=false&size=139132&status=done&style=shadow&taskId=u23552590-5180-4cee-9959-f9a4b44c308&title=&width=610)
 JDBC是接口，而JDBC驱动才是接口的实现，没有驱动无法完成数据库连接！每个数据库厂商都有自己的驱动，用来连接自己公司的数据库。
 当然还有第三方公司专门为某一数据库提供驱动，这样的驱动往往不是开源免费的！
 
-![](https://cdn.nlark.com/yuque/0/2023/jpeg/21376908/1692002570088-3338946f-42b3-4174-8910-7e749c31e950.jpeg#averageHue=%23f9f8f8&from=url&id=jfU6l&originHeight=78&originWidth=1400&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=shadow&title=)
+
 # 模拟JDBC接口
 ## 接口在开发中的作用
 Java中接口的作用主要有以下几个方面：
@@ -28,7 +28,7 @@ Java中接口的作用主要有以下几个方面：
 
 总的来说，Java中的接口可以让我们通过规范来编写更加标准和灵活的代码，使得代码易于维护和扩展，并通过多态的特性来提高代码的重用性和可读性。**Java接口在使用场景中，一定是存在两个角色的，一个是接口的调用者，一个是接口的实现者，接口的出现让调用者和实现者解耦合了。**
 
-![](https://cdn.nlark.com/yuque/0/2023/jpeg/21376908/1692002570088-3338946f-42b3-4174-8910-7e749c31e950.jpeg#averageHue=%23f9f8f8&from=url&id=nA5ZY&originHeight=78&originWidth=1400&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=shadow&title=)
+
 ## 编写程序模拟JDBC接口
 **接口的制定者**：SUN公司负责制定的
 ```java
@@ -104,7 +104,7 @@ public class Client{
 ```
 最终通过修改jdbc.properties配置文件即可做到数据库的切换。这样就完全做到了调用者和实现者的解耦合。调用者不需要关心实现者，实现者也不需要关心调用者。双方都是面向接口编程。这就是JDBC的本质：它就是一套接口。
 
-![](https://cdn.nlark.com/yuque/0/2023/jpeg/21376908/1692002570088-3338946f-42b3-4174-8910-7e749c31e950.jpeg#averageHue=%23f9f8f8&from=url&id=h2q4g&originHeight=78&originWidth=1400&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=shadow&title=)
+
 # 配置CLASSPATH
 经过上面内容的讲解，大家应该知道JDBC开发有三个角色的参与：
 
@@ -114,14 +114,14 @@ public class Client{
 
 以上三者凑齐了我们才能进行JDBC的开发。它们三个都在哪里呢？“我们”就不用多说了，写操作数据库的代码就行了。JDBC接口在哪（接口的class文件在哪）？JDBC接口实现类在哪（驱动在哪）？
 
-![](https://cdn.nlark.com/yuque/0/2023/jpeg/21376908/1692002570088-3338946f-42b3-4174-8910-7e749c31e950.jpeg#averageHue=%23f9f8f8&from=url&id=ZFsNv&originHeight=78&originWidth=1400&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=shadow&title=)
+
 ## JDBC接口在哪
 JDBC接口在JDK中。对应的包是：**java.sql.*;**
 JDBC API帮助文档就在JDK的帮助文档当中。
 ![image.png](https://cdn.nlark.com/yuque/0/2023/png/21376908/1701939712048-f4487a29-3eb7-494f-b7c0-b72c6c0c03ad.png#averageHue=%23f2f2f2&clientId=u88d51c01-0843-4&from=paste&height=258&id=u2929644e&originHeight=258&originWidth=422&originalType=binary&ratio=1&rotation=0&showTitle=false&size=21472&status=done&style=shadow&taskId=u3924f2fb-b1a5-4961-ae9f-35e5a0fbabb&title=&width=422)
 ![image.png](https://cdn.nlark.com/yuque/0/2023/png/21376908/1701939824373-e1c98bbf-cc6a-44c0-95b6-d2c3a0ecbf52.png#averageHue=%23434541&clientId=u88d51c01-0843-4&from=paste&height=793&id=u969d5906&originHeight=793&originWidth=473&originalType=binary&ratio=1&rotation=0&showTitle=false&size=29261&status=done&style=shadow&taskId=u2686a26a-bd60-4c00-af46-2beeceb81d7&title=&width=473)
 
-![](https://cdn.nlark.com/yuque/0/2023/jpeg/21376908/1692002570088-3338946f-42b3-4174-8910-7e749c31e950.jpeg#averageHue=%23f9f8f8&from=url&id=pYLed&originHeight=78&originWidth=1400&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=shadow&title=)
+
 ## 驱动在哪
 驱动是JDBC接口的实现类，这些实现类是各大数据库厂家自己实现的，所以这些实现类的就需要去数据库厂商相关的网站上下载了。通常这些实现类被全部放到一个xxx.jar包中。下面演示一下mysql的驱动如何下载【下载mysql的驱动jar包】：
 打开页面：[https://dev.mysql.com/downloads/connector/j/](https://dev.mysql.com/downloads/connector/j/)
@@ -134,7 +134,7 @@ JDBC API帮助文档就在JDK的帮助文档当中。
 ![image.png](https://cdn.nlark.com/yuque/0/2023/png/21376908/1701941060668-654b02a2-956a-4765-87be-8be10997ce0a.png#averageHue=%23f9f4f1&clientId=u88d51c01-0843-4&from=paste&height=581&id=u4969b92c&originHeight=581&originWidth=451&originalType=binary&ratio=1&rotation=0&showTitle=false&size=25066&status=done&style=shadow&taskId=u4276fdb4-72f6-497c-9a1b-73c4c2a7b57&title=&width=451)
 可以看到这个jar包中都是xxx.class文件，这就是JDBC接口的实现类。这个jar包就是连接mysql数据库的驱动。如果是oracle的驱动就需要去oracle的官网下载了。这里不再赘述。
 
-![](https://cdn.nlark.com/yuque/0/2023/jpeg/21376908/1692002570088-3338946f-42b3-4174-8910-7e749c31e950.jpeg#averageHue=%23f9f8f8&from=url&id=CqMSe&originHeight=78&originWidth=1400&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=shadow&title=)
+
 ## 如果使用文本编辑器开发
 如果使用文本编辑器开发，不使用集成开发环境的话，以上的jar包就需要手动配置到环境变量CLASSPATH当中，配置如下：
 如果jar包放在这里：
@@ -143,7 +143,7 @@ JDBC API帮助文档就在JDK的帮助文档当中。
 ![image.png](https://cdn.nlark.com/yuque/0/2023/png/21376908/1701941302115-b531f7d3-3a17-487e-a3fe-7168e4022d40.png#averageHue=%23f0efee&clientId=u88d51c01-0843-4&from=paste&height=177&id=u9af25ce2&originHeight=177&originWidth=651&originalType=binary&ratio=1&rotation=0&showTitle=false&size=8674&status=done&style=shadow&taskId=u1612016b-7741-45d3-bb17-43d00f24f94&title=&width=651)
 注意配置路径中的当前路径“.”是不能省略的。
 
-![](https://cdn.nlark.com/yuque/0/2023/jpeg/21376908/1692002570088-3338946f-42b3-4174-8910-7e749c31e950.jpeg#averageHue=%23f9f8f8&from=url&id=hmiOT&originHeight=78&originWidth=1400&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=shadow&title=)
+
 ## 如果使用IDEA工具开发
 如果是采用集成开发工具，例如IDEA，就不需要手动配置CLASSPATH了，只需要将jar包放到IDEA中（实际上放到IDEA工具中的过程就是等同于在配置CLASSPATH）
 

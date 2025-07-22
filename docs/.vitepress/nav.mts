@@ -4,7 +4,7 @@ export default [
   { text: "音乐", link: "https://music.xpin.top", target: "_self" },
   { text: "技术栈",
     items: [
-      { text: "JavaSE", link: "/JSZ/JavaSE总结/Windows下Java环境配置教程" },
+      { text: "JavaSE", link: "/JSZ/Java/Windows下Java环境配置教程" },
       { text: "MySQL", link: "/JSZ/MySQL/Navicat安装教程" },
       { text: "JDBC", link: "/JSZ/JDBC/JDBC概述" },
     ], 

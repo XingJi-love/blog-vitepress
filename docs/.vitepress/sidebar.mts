@@ -1,31 +1,19 @@
 export default {
   "/JSZ/": [
     {
-      text: "JavaSE基础",
+      text: "Java",
       items: [
         {
           text: "Java | Windows下Java环境配置教程",
-          link: "/JSZ/JavaSE总结/Windows下Java环境配置教程",
+          link: "/JSZ/Java/Windows下Java环境配置教程",
         },
         {
-          text: "Java | 语言概述",
-          link: "/JSZ/JavaSE总结/【JavaSE基础】Java 语言概述",
+          text: "Java | 基础语法",
+          link: "/JSZ/Java/基础语法",
         },
         {
-          text: "Java | 快速入门",
-          link: "/JSZ/JavaSE总结/【JavaSE基础】Java 快速入门",
-        },
-        {
-          text: "Java | 基础知识",
-          link: "/JSZ/JavaSE总结/【JavaSE基础】Java 基础知识",
-        },
-        {
-          text: "Java | 章节作业",
-          link: "/JSZ/JavaSE总结/【JavaSE基础】Java概述-章节作业",
-        },
-        {
-          text: "Java | 变量",
-          link: "/JSZ/JavaSE总结/【JavaSE基础】变量",
+          text: "Java | 面向对象",
+          link: "/JSZ/Java/面向对象",
         },
       ],
     },
